@@ -1,19 +1,13 @@
 package com.spring.spring6di.controllers;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
-import com.spring.spring6di.services.GreetingServiceImpl;
-
+@SpringBootTest
 public class ProperyInjectedControllerTest {
+    @Autowired
     ProperyInjectedController properyInjectedController;
-
-    @BeforeEach
-    void setup() {
-        properyInjectedController = new ProperyInjectedController();
-        properyInjectedController.greetingService = new GreetingServiceImpl();
-
-    }
 
     @Test
     void testSayHello() {
