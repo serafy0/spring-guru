@@ -8,6 +8,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import com.spring.spring6restmvc.model.BeerStyle;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
