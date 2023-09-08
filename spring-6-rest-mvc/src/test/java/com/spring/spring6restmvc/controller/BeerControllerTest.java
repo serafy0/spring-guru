@@ -1,9 +1,5 @@
 package com.spring.spring6restmvc.controller;
 
-import java.util.UUID;
-
-import javax.print.attribute.standard.Media;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
