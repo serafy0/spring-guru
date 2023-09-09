@@ -44,11 +44,9 @@ public class BeerControllerIT {
         Beer beer = beerRepository.findAll().get(0);
 
         ResponseEntity responseEntity = beerController.deleteById(beer.getId());
+        assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatusCode.valueOf(204));
 
         assertThat(beerRepository.findById(beer.getId()).isEmpty());
-
-        Beer foundBeer = beerRepository.findById(beer.getId()).get();
-        assertThat(foundBeer).isNotNull();
 
     }
 
