@@ -37,6 +37,23 @@ public class BeerControllerIT {
         });
     }
 
+    @Rollback
+    @Transactional
+    @Test
+    void testDeleteByIdFound() {
+        Beer beer = beerRepository.findAll().get(0);
+
+        ResponseEntity responseEntity = beerController.deleteById(beer.getId());
+
+        assertThat(beerRepository.findById(beer.getId()).isEmpty());
+
+        Beer foundBeer = beerRepository.findById(beer.getId()).get();
+        assertThat(foundBeer).isNotNull();
+
+    }
+
+    @Transactional
+    @Rollback
     @Test
     void testUpdateExistingBeer() {
         Beer beer = beerRepository.findAll().get(0);

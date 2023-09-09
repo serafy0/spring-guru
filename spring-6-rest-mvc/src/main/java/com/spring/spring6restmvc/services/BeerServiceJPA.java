@@ -25,7 +25,7 @@ public class BeerServiceJPA implements BeerService {
 
     @Override
     public void deleteById(UUID beerId) {
-        // TODO Auto-generated method stub
+        beerRepository.deleteById(beerId);
 
     }
 
