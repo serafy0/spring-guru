@@ -3,7 +3,6 @@ package com.spring.spring6restmvc.controller;
 import java.util.List;
 import java.util.UUID;
 
-import org.apache.catalina.connector.Response;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -27,6 +26,8 @@ public class BeerControllerIT {
     @Autowired
     BeerRepository beerRepository;
 
+    @Transactional
+    @Rollback
     @Test
     void testSaveNewBeer() {
         BeerDTO beerDTO = BeerDTO.builder().beerName("New Beer").build();
