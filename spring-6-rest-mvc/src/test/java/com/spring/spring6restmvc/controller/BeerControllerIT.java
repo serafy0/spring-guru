@@ -19,6 +19,8 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.context.WebApplicationContext;
 
+import static org.hamcrest.core.Is.is;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.spring.spring6restmvc.entities.Beer;
 import com.spring.spring6restmvc.mappers.BeerMapper;
@@ -72,7 +74,9 @@ public class BeerControllerIT {
                 .contentType(MediaType.APPLICATION_JSON)
                 .accept(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(beerMap)))
-                .andExpect(status().isBadRequest());
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.length()", is(1)))
+                .andReturn();
 
     }
 
