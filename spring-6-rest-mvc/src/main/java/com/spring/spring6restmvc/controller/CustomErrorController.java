@@ -16,7 +16,9 @@ public class CustomErrorController {
 
     @ExceptionHandler
     ResponseEntity handleJPAViolations(TransactionSystemException exception) {
-        return ResponseEntity.badRequest().build();
+
+        ResponseEntity.BodyBuilder responseEntity = ResponseEntity.badRequest();
+        return responseEntity.build();
 
     }
 
