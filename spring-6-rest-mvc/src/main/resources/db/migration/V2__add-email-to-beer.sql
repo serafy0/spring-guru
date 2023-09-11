@@ -1,2 +1,2 @@
 alter table beer
-add column company-email varchar(255);
+add column company_email varchar(255);
