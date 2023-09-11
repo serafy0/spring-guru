@@ -1,18 +1,15 @@
-package com.spring.spring6restmvc.entities;
+package com.spring.spring6restmvc.model;
 
 import com.opencsv.bean.CsvBindByName;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-// "1",1,0.05,NA,1436,"Pub Beer","American Pale Lager",
-// 408,12,NA,409,"10 Barrel Brewing Company","Bend",
-// "OR","Pub Beer (10 Barrel Brewing Company)"
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class BeerCVSRecord {
+public class BeerCSVRecord {
 
     @CsvBindByName
     private Integer row;
