@@ -51,6 +51,9 @@ public class Beer {
     @NotNull
     private BeerStyle beerStyle;
 
+    @Column(length = 255)
+    private String companyEmail;
+
     @NotNull
     @NotBlank
     @Size(max = 255)
